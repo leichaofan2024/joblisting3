@@ -1,0 +1,9 @@
+<div class="col-md-4 col-md-offset-4">
+  <h2>新建表单</h2>
+  <hr>
+  <%= simple_form_for @job do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.submit "submit", disable_with: "Submiting..." %>
+  <% end %>
+</div>

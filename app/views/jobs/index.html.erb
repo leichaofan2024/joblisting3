@@ -1,0 +1,30 @@
+<div class="pull-right">
+  <%= link_to("新增", new_job_path, class:"btn btn-primary" ) %>
+</div>
+<div class="container-fluid">
+  <table class="table table-boldered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>职缺</th>
+        <th>发布者</th>
+        <th>发布日期</th>
+        <th colspan="2">管理</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td>#</td>
+          <td><%= link_to(job.title, job_path(job)) %></td>
+          <td></td>
+          <td><%= job.created_at %></td>
+          <td>
+            <%= link_to("edit",edit_job_path(job),class: "btn btn-primary") %>
+            <%= link_to("delete", job_path(job), method: :delete, data:{:confirm=>"Are you sure?"},class:"btn btn-danger")%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
