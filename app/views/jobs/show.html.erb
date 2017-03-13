@@ -3,6 +3,6 @@
   <hr>
   <p><%= simple_format(@job.description) %></p>
 </div>
-<div class="text-center col-md-10 col-md-offset-1" style="margin-top:100px;text-decoration:underline">
-  <h3><a href="#">提交简历</a></h3>
+<div class="text-center col-md-10 col-md-offset-1" style="margin-top:100px;">
+  <h3><%= link_to("提交简历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;") %></h3>
 </div>

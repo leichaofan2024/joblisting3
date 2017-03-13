@@ -3,5 +3,14 @@
 </div>
 <hr>
 <table class="table table-boldered">
+  <thead>
+    <tr>
+      <th>职缺状态</th>
+      <th>职缺</th>
+      <th>收到简历数</th>
+      <th>管理</th>
+      <th>发布时间</th>
+    </tr>
+  </thead>
   <%= render :partial => "job-item", :collection => @jobs, :as => :job %>
 </table>
