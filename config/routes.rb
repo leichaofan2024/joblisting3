@@ -4,13 +4,14 @@ Rails.application.routes.draw do
   root "jobs#index"
   resources :jobs do
     resources :resumes
-  end 
+  end
   namespace :admin do
     resources :jobs do
       member do
         post :hide
         post :public
       end
+      resources :resumes
     end
   end
 
