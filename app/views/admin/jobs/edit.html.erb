@@ -1,0 +1,7 @@
+<h2>编辑职缺</h2>
+<hr>
+<%= simple_form_for [:admin,@job] do |f| %>
+  <%= f.input :title, input_html: {:class => "control-form"} %>
+  <%= f.input :description, input_html: {class: "control-form"} %>
+  <%= f.submit "Submit",disable_with: "Submiting..." %>
+<% end %>
