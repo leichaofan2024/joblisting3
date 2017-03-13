@@ -1,7 +1,12 @@
   <tr>
     <td>
-      <%= render_job_status(job) %>
-      <%= link_to(job.title, admin_job_path(job)) %></td>
+      <% if job.is_hidden %>
+        <%= link_to("", public_admin_job_path(job), method: :post, :class => "fa fa-lock fa-2x",style: "text-decoration:none") %>
+      <% elsif !job.is_hidden %>
+        <%= link_to("", hide_admin_job_path(job), method: :post,:class => "fa fa-eye fa-2x",style: "text-decoration:none") %>
+      <% end %>
+    </td>
+    <td>  <%= link_to(job.title, admin_job_path(job)) %></td>
     <td>
       <%= link_to("编辑", edit_admin_job_path(job),class: "btn btn-primary") %>
       <%= link_to("删除", admin_job_path(job),class: "btn btn-danger", :method => :delete, :data => {:confirm => "Are you sure?"}) %>
