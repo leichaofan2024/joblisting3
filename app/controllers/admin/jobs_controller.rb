@@ -35,11 +35,7 @@ class Admin::JobsController < ApplicationController
     @job.destroy
     redirect_to admin_jobs_path, warning:"成功删除！"
   end
-  def require_is_admin
-    if !current_user.admin?
-      redirect_to jobs_path, alert:  "你不是管理员啊！"
-    end
-  end
+
   private
 
   def job_params
